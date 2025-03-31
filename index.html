@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tic-Tac-Toe 🎀</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Coming+Soon&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <!-- Home Page -->
+  <div id="homePage">
+    <h1>Tic-Tac-Toe 🎀</h1>
+    <button onclick="showPage('gamePage')">Start</button>
+    <button onclick="showPage('settingsPage')">Settings</button>
+    <button onclick="showPage('creditsPage')">Credits</button>
+  </div>
+
+  <!-- Game Page -->
+  <div id="gamePage" class="hidden">
+    <h2>Current Turn: <span id="currentTurn">X</span></h2>
+    <div class="board">
+      <button class="cell" onclick="makeMove(0)"></button>
+      <button class="cell" onclick="makeMove(1)"></button>
+      <button class="cell" onclick="makeMove(2)"></button>
+      <button class="cell" onclick="makeMove(3)"></button>
+      <button class="cell" onclick="makeMove(4)"></button>
+      <button class="cell" onclick="makeMove(5)"></button>
+      <button class="cell" onclick="makeMove(6)"></button>
+      <button class="cell" onclick="makeMove(7)"></button>
+      <button class="cell" onclick="makeMove(8)"></button>
+    </div>
+  </div>
+
+  <!-- Winner/Draw Page -->
+  <div id="winnerPage" class="hidden">
+    <h2 id="winnerText"></h2>
+    <button onclick="showPage('gamePage')">Restart</button>
+    <button onclick="showPage('homePage')">Back</button>
+  </div>
+
+  <!-- Settings Page -->
+  <div id="settingsPage" class="hidden">
+    <h2>Settings</h2>
+    <label>
+      <input type="checkbox" id="bgMusicToggle" checked> Background Music
+    </label>
+    <br />
+    <label>
+      <input type="checkbox" id="xSoundToggle" checked> X Sound
+    </label>
+    <br />
+    <label>
+      <input type="checkbox" id="oSoundToggle" checked> O Sound
+    </label>
+    <br />
+    <label>
+      <input type="checkbox" id="clickSoundToggle" checked> Button Click Sound
+    </label>
+    <br />
+    <label>
+      <input type="checkbox" id="winSoundToggle" checked> Win Sound
+    </label>
+    <br />
+    <button onclick="showPage('homePage')">Back</button>
+  </div>
+
+  <!-- Credits Page -->
+  <div id="creditsPage" class="hidden">
+    <h2>Credits</h2>
+    <p>Developed by Sweety & AI Mama 💕</p>
+    <button onclick="showPage('homePage')">Back</button>
+  </div>
+
+  <!-- Audio Files -->
+  <audio id="bgMusic" loop src="assets/bg-music.mp3"></audio>
+  <audio id="xSound" src="assets/x-sound.mp3"></audio>
+  <audio id="oSound" src="assets/o-sound.mp3"></audio>
+  <audio id="clickSound" src="assets/click.mp3"></audio>
+  <audio id="winSound" src="assets/win.mp3"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
